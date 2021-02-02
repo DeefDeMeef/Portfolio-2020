@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="nog fixen">
+    <meta name="description" content="Dit zie je op google">
+    <meta name="keywords" content="heel veel trefwoorden hier">
+    <meta name="author" content="Davey Zaal">
+    <title>Davey Zaal</title>
+    <link rel="stylesheet" type="text/css" href="style/style2.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- <div class="overlay">
+        <h1>DAVEY ZAAL.</h1>
+    </div> -->
+
+    <div class="wrapper">
+        <div class="logo">DAVEY.</div>
+        <div class="nav">
+            <div class="toggle-btn">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="data">
+                <ul class="navigation">
+                    <li>Menu</li>
+                    <li><a class="navLink" href="index.html">Home</a></li>
+                    <li><a class="navLink" href="work.html">My work</a></li>
+                    <li><a class="navLink" href="aboutme.html">About me</a></li>
+                    <li><a class="navLink" href="contact.html">Let's talk</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header">
+            <a href="test.html"></a><h1>DAVEY</h1></a>
+        </div>
+
+        <div class="social-media">
+            <ul>
+                <li><a href="mailto:daveyzaal@hotmail.nl"><span style="color: #fff;"><i class="far fa-envelope"
+                                aria-hidden="true"></i></span></li>
+                <li><a href="https://www.instagram.com/davey.zaal/" target="_blank"><span style="color: #fff;"><i
+                                class="fab fa-instagram" aria-hidden="true"></i></span></a></li>
+                <li><a href="https://www.linkedin.com/in/daveyzaal/" target="_blank"><span style="color: #fff;"><i
+                                class="fab fa-linkedin-in" aria-hidden="true"></i></span></a></li>
+            </ul>
+        </div>
+        <div class="side-strip">
+            <span>DAVEY JULIAN ZAAL</span>
+        </div>
+
+        <script type="text/javascript">
+            // start overlay animations
+
+            TweenMax.to(".overlay h1", 2.5, {
+                opacity: 0,
+                y: -60,
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.to(".overlay", 2.5, {
+                delay: 1,
+                top: "-100%",
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.from(".side-strip", 2, {
+                delay: 2.4,
+                opacity: 0,
+                x: 20,
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.from(".social-media", 2, {
+                delay: 2.4,
+                opacity: 0,
+                x: -20,
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.from(".header img", 2, {
+                delay: 3.2,
+                opacity: 0,
+                y: 20,
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.from(".logo", 2, {
+                delay: 3.2,
+                opacity: 0,
+                y: -20,
+                ease: Expo.easeInOut
+            })
+
+            TweenMax.from(".toggle-btn", 2, {
+                delay: 3.2,
+                opacity: 0,
+                y: -20,
+                ease: Expo.easeInOut
+            })
+
+            // end overlay animations
+
+            // start menu animations
+
+            var menu = new TimelineMax({
+                paused: true
+            });
+
+            menu.to(".one", 0.8, {
+                y: 6,
+                rotation: 45,
+                ease: Expo.easeInOut
+            });
+            menu.to(".two", 0.8, {
+                y: -6,
+                rotation: -45,
+                ease: Expo.easeInOut,
+                delay: -0.8
+            });
+
+            menu.to(".menu", 1, {
+                top: "0%",
+                ease: Expo.easeInOut,
+                delay: -0.5
+            });
+
+            menu.staggerFrom(".menu ul li", 1, {
+                x: -200,
+                opacity: 0,
+                ease: Expo.easeOut
+            }, 0.1);
+
+            menu.reverse();
+            $(document).on("click", ".toggle-btn", function () {
+                menu.reversed(!menu.reversed());
+            });
+            $(document).on("click", "a", function () {
+                menu.reversed(!menu.reversed());
+            });
+
+            // end menu animations
+        </script>
+</body>
+
+</html>

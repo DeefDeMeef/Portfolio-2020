@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@font-face {
+    font-family: 'untitled';
+    src: url('../font/untitled.ttf')  format('truetype');
+  }
+
+        html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 2000px;
+    overflow-x: hidden;
+    font-family: "Monument Extended", Arial, Helvetica, sans-serif;
+    background: #0f0f0f;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 200px 0px;
+    position: relative;
+}
+
+.image-container {
+    padding-bottom: 100%;
+    background: black;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    background-image: url("IMG_2550.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.text {
+    color: white;
+    margin: 0;
+    font-size: 64px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: -40%;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'untitled';
+}
+.text.text-dark {
+    color: #16FFC0;
+    font-family: 'untitled';
+}
+.text span {
+    position: relative;
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="smooth-scroll-wrapper">
+        <div class="content">
+            <div class="container">
+                <div class="image-container">
+                    <h2 class="text text-dark">
+                        <span class="parallax-title">
+                            Hi, ik ben Davey!
+                        </span>
+                    </h2>
+                </div>
+
+                <h2 class="text">
+                    <span class="parallax-title">
+                        Hi, ik ben Davey!
+                    </span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        let atScroll = false;
+        let parallaxTitle = document.querySelectorAll(".parallax-title");
+
+        const scrollProgress = () => {
+            atScroll = true;
+        };
+
+        const raf = () => {
+            if (atScroll) {
+                parallaxTitle.forEach((element, index) => {
+                    element.style.transform = "translateX(" + window.scrollY / 8 + "%)";
+                });
+                atScroll = false;
+            }
+            requestAnimationFrame(raf);
+        };
+
+        requestAnimationFrame(raf);
+        window.addEventListener("scroll", scrollProgress);
+    </script>
+</body>
+</html>
